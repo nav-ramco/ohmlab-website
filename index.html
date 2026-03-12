@@ -40,7 +40,7 @@ section .subtitle{color:#9CA3AF;font-size:16px;margin-bottom:48px;}
 .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:12px;}
 .carousel-dots .dot{width:8px;height:8px;border-radius:50%;background:#4B5563;cursor:pointer;transition:background .3s;}
 .carousel-dots .dot.active{background:#2DD4BF;}
-.code-section{background:#111827;border-radius:16px;padding:40px;margin-top:48px;max-width:800px;}
+.code-section{background:#111827;border-radius:16px;padding:40px;margin-top:48px;max-width:100%;}
 .code-section code{font-family:'SF Mono',monospace;font-size:13px;color:#2DD4BF;line-height:2;}
 .code-section .comment{color:#6B7280;}
 .comparison table{width:100%;border-collapse:collapse;margin-top:32px;}
@@ -50,6 +50,16 @@ section .subtitle{color:#9CA3AF;font-size:16px;margin-bottom:48px;}
 .comparison td:first-child{color:#9CA3AF;}
 .yes{color:#2DD4BF;}
 .no{color:#EF4444;}
+.twin-section{display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:1440px;margin:0 auto;padding:80px 80px;}
+.twin-section section{padding:0;}
+.community-highlight{background:#111827;border-radius:16px;padding:40px;}
+.community-highlight h2{font-size:28px;margin-bottom:8px;}
+.community-highlight .subtitle{margin-bottom:24px;color:#9CA3AF;font-size:14px;}
+.community-link{display:flex;align-items:center;gap:16px;padding:16px 20px;background:#0A0E1A;border-radius:12px;border:1px solid #1F2937;margin-bottom:12px;transition:border-color .2s;}
+.community-link:hover{border-color:#2DD4BF;}
+.community-link .cl-icon{font-size:28px;}
+.community-link h3{font-size:15px;font-weight:600;margin-bottom:2px;}
+.community-link p{color:#9CA3AF;font-size:12px;line-height:1.4;}
 .community-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
 .community-card h3{font-size:16px;font-weight:600;margin-bottom:8px;}
 .community-card p{color:#9CA3AF;font-size:13px;line-height:1.5;}
@@ -63,6 +73,7 @@ section{padding:48px 24px;}
 .powered{margin:0 24px;padding:32px;}
 .powered-inner{grid-template-columns:1fr;}
 .powered-grid{grid-template-columns:1fr 1fr;}
+.twin-section{grid-template-columns:1fr;padding:48px 24px;}
 .community-grid{grid-template-columns:1fr 1fr;}
 .comparison{overflow-x:auto;}
 }
@@ -91,9 +102,9 @@ section{padding:48px 24px;}
 </section>
 
 <div class="powered">
-<h2>Powered by the STM32N6</h2>
 <div class="powered-inner">
 <div>
+<h2>Powered by the STM32N6</h2>
 <div class="powered-grid">
 <div class="powered-card">
 <h3>Dedicated NPU</h3>
@@ -115,11 +126,11 @@ section{padding:48px 24px;}
 </div>
 <div>
 <div class="carousel-container" id="poweredCarousel">
-<img src="images/DSC_0208-2.jpg" alt="Neuro N6 Board" class="active">
-<img src="images/DSC_0221.jpg" alt="Neuro Vision Camera Module">
-<img src="images/DSC_0234.jpg" alt="Neuro Vision with USB-C">
-<img src="images/DSC_0251.jpg" alt="Neuro Vision on standoffs">
-<img src="images/DSC_0264.jpg" alt="OHM Lab board overview">
+<img src="images/neuro-n6-board.jpg" alt="Neuro N6 Board" class="active">
+<img src="images/neuro-vision-camera.jpg" alt="Neuro Vision Camera Module">
+<img src="images/neuro-vision-usbc.jpg" alt="Neuro Vision with USB-C">
+<img src="images/neuro-vision-standoffs.jpg" alt="Neuro Vision on standoffs">
+<img src="images/ohm-lab-overview.jpg" alt="OHM Lab board overview">
 </div>
 <div class="carousel-dots" id="carouselDots">
 <span class="dot active" data-index="0"></span>
@@ -132,6 +143,7 @@ section{padding:48px 24px;}
 </div>
 </div>
 
+<div class="twin-section">
 <section>
 <h2>Get Started in Minutes</h2>
 <div class="code-section">
@@ -147,6 +159,41 @@ $ ohm run --camera mipi --model/face_estimation
 </code>
 </div>
 </section>
+<section id="community">
+<div class="community-highlight">
+<h2>Join the Community</h2>
+<p class="subtitle">Connect with developers building at the edge. We're on GitHub and Discord.</p>
+<a href="#" class="community-link">
+<span class="cl-icon">⭐</span>
+<div>
+<h3>GitHub</h3>
+<p>Explore source code, contribute, and file issues.</p>
+</div>
+</a>
+<a href="#" class="community-link">
+<span class="cl-icon">💬</span>
+<div>
+<h3>Discord</h3>
+<p>Chat with other developers and the OHM team in real-time.</p>
+</div>
+</a>
+<a href="https://www.kickstarter.com/projects/ohmlab-ltd/neuro-n6" class="community-link">
+<span class="cl-icon">🚀</span>
+<div>
+<h3>Kickstarter</h3>
+<p>Back the project and get early access.</p>
+</div>
+</a>
+<a href="#" class="community-link">
+<span class="cl-icon">📖</span>
+<div>
+<h3>Documentation</h3>
+<p>Full API reference, tutorials, and getting started guides.</p>
+</div>
+</a>
+</div>
+</section>
+</div>
 
 <section class="comparison">
 <h2>Why Neuro N6?</h2>
@@ -157,53 +204,56 @@ $ ohm run --camera mipi --model/face_estimation
 <tbody>
 <tr><td>Dedicated NPU</td><td class="yes">Yes (1.5 TOPS)</td><td class="no">No</td><td class="no">No</td></tr>
 <tr><td>On-device Vision</td><td class="yes">Yes (MIPI CSI)</td><td class="yes">Yes (Built-in)</td><td class="yes">Yes (CSI)</td></tr>
-<tr><td>Power Consumption</td><td class="yes">Ultra-low</td><td>Low</td><td class="no">High</td></tr>
-<tr><td>Price Point</td><td class="yes">Competitive</td><td>Premium</td><td class="yes">Budget</td></tr>
+<tr><td>Power Consumption</td><td>Ultra-low</td><td>Low</td><td>High</td></tr>
+<tr><td>Price Point</td><td>Competitive</td><td>Premium</td><td>Budget</td></tr>
 <tr><td>Fast Build Time</td><td class="yes">Yes</td><td>Moderate</td><td>Full Linux OS</td></tr>
 <tr><td>Arduino Compatible</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td></tr>
 </tbody>
 </table>
 </section>
 
-<section id="community">
-<h2>Join the Community</h2>
-<p class="subtitle">Connect with developers building at the edge.</p>
-<div class="community-grid">
-<div class="community-card">
-<h3><a href="#">GitHub</a></h3>
-<p>Explore source, contribute, and file issues.</p>
-</div>
-<div class="community-card">
-<h3><a href="#">Discord</a></h3>
-<p>Chat with other developers and the OHM team.</p>
-</div>
-<div class="community-card">
-<h3><a href="https://www.kickstarter.com/projects/ohmlab-ltd/neuro-n6">Kickstarter</a></h3>
-<p>Back the project and get early access.</p>
-</div>
-<div class="community-card">
-<h3><a href="#">Documentation</a></h3>
-<p>Full API reference, tutorials, and getting started guides.</p>
-</div>
-</div>
-</section>
-
-<section id="industries">
+<section>
 <h2>Built for Every Industry</h2>
 <p class="subtitle">Edge AI vision and audio intelligence across sectors — from agriculture to defence.</p>
 <div class="community-grid">
-<div class="community-card"><h3><a href="industries/agriculture.html">🌿 Agriculture</a></h3><p>Crop monitoring, pest detection, autonomous field robots.</p></div>
-<div class="community-card"><h3><a href="industries/automotive.html">🚗 Automotive</a></h3><p>ADAS, driver monitoring, in-cabin intelligence.</p></div>
-<div class="community-card"><h3><a href="industries/defence.html">🛡️ Defence</a></h3><p>Surveillance, threat detection, autonomous systems.</p></div>
-<div class="community-card"><h3><a href="industries/industrial.html">🏭 Industrial</a></h3><p>Quality inspection, predictive maintenance, safety monitoring.</p></div>
-<div class="community-card"><h3><a href="industries/robotics.html">🤖 Robotics</a></h3><p>Navigation, object manipulation, real-time perception.</p></div>
-<div class="community-card"><h3><a href="industries/healthcare.html">❤️ Healthcare</a></h3><p>Patient monitoring, medical imaging, fall detection.</p></div>
-<div class="community-card"><h3><a href="industries/smarthome.html">🏠 Smart Home</a></h3><p>Voice control, presence detection, security cameras.</p></div>
-<div class="community-card"><h3><a href="industries/retail.html">🛒 Retail</a></h3><p>Loss prevention, footfall analytics, shelf intelligence.</p></div>
+<div class="community-card">
+<h3><a href="industries/agriculture.html">🌿 Agriculture</a></h3>
+<p>Crop monitoring, pest detection, autonomous field robots.</p>
+</div>
+<div class="community-card">
+<h3><a href="industries/automotive.html">🚗 Automotive</a></h3>
+<p>ADAS, driver monitoring, in-cabin intelligence.</p>
+</div>
+<div class="community-card">
+<h3><a href="industries/defence.html">🛡️ Defence</a></h3>
+<p>Surveillance, threat detection, autonomous systems.</p>
+</div>
+<div class="community-card">
+<h3><a href="industries/industrial.html">🏭 Industrial</a></h3>
+<p>Quality inspection, predictive maintenance, safety monitoring.</p>
+</div>
+<div class="community-card">
+<h3><a href="industries/robotics.html">🤖 Robotics</a></h3>
+<p>Navigation, object manipulation, real-time perception.</p>
+</div>
+<div class="community-card">
+<h3><a href="industries/healthcare.html">❤️ Healthcare</a></h3>
+<p>Patient monitoring, medical imaging, fall detection.</p>
+</div>
+<div class="community-card">
+<h3><a href="industries/smarthome.html">🏠 Smart Home</a></h3>
+<p>Voice control, presence detection, security cameras.</p>
+</div>
+<div class="community-card">
+<h3><a href="industries/retail.html">🛒 Retail</a></h3>
+<p>Loss prevention, footfall analytics, shelf intelligence.</p>
+</div>
 </div>
 </section>
 
-<footer>© 2025 OHM Lab. Built in the UK. Designed for developers who build at the edge.</footer>
+<footer>
+© 2025 OHM Lab. Built in the UK. Designed for developers who build at the edge.
+</footer>
 
 <script>
 (function(){
@@ -215,7 +265,6 @@ let current = 0;
 gifs.forEach(src => { const i = new Image(); i.src = src; });
 setInterval(function(){ current = (current + 1) % gifs.length; img.src = gifs[current]; label.textContent = labels[current]; }, 8000);
 })();
-
 (function(){
 const imgs = document.querySelectorAll('#poweredCarousel img');
 const dots = document.querySelectorAll('#carouselDots .dot');
