@@ -19,8 +19,9 @@ nav ul li a:hover{color:#fff;}
 .hero h1{font-size:56px;font-weight:800;line-height:1.1;margin-bottom:24px;}
 .hero h1 .accent{color:#2DD4BF;}
 .hero .tagline{color:#9CA3AF;font-size:20px;line-height:1.5;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto;}
-.hero .cta{display:inline-block;background:#2DD4BF;color:#0A0E1A;padding:14px 28px;border-radius:8px;font-weight:600;font-size:15px;transition:background .2s;}
+.hero .cta{display:inline-flex;align-items:center;gap:10px;background:#2DD4BF;color:#0A0E1A;padding:14px 28px;border-radius:8px;font-weight:600;font-size:15px;transition:background .2s;}
 .hero .cta:hover{background:#14b8a6;}
+.hero .cta svg{width:20px;height:20px;}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(45,212,191,.4);}70%{box-shadow:0 0 0 15px rgba(45,212,191,0);}}
 .hero-demo{max-width:900px;margin:48px auto 0;border-radius:12px;overflow:hidden;background:#111827;position:relative;}
 .hero-demo img{width:100%;display:block;}
@@ -57,12 +58,19 @@ section .subtitle{color:#9CA3AF;font-size:16px;margin-bottom:48px;}
 .community-highlight .subtitle{margin-bottom:24px;color:#9CA3AF;font-size:14px;}
 .community-link{display:flex;align-items:center;gap:16px;padding:16px 20px;background:#0A0E1A;border-radius:12px;border:1px solid #1F2937;margin-bottom:12px;transition:border-color .2s;}
 .community-link:hover{border-color:#2DD4BF;}
-.community-link .cl-icon{font-size:28px;}
+.community-link .cl-icon{width:32px;height:32px;flex-shrink:0;}
+.community-link .cl-icon svg{width:32px;height:32px;}
 .community-link h3{font-size:15px;font-weight:600;margin-bottom:2px;}
 .community-link p{color:#9CA3AF;font-size:12px;line-height:1.4;}
-.community-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
-.community-card h3{font-size:16px;font-weight:600;margin-bottom:8px;}
-.community-card p{color:#9CA3AF;font-size:13px;line-height:1.5;}
+.industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.industry-card{background:#111827;border-radius:12px;padding:24px;border:1px solid #1F2937;transition:border-color .2s;}
+.industry-card:hover{border-color:#2DD4BF;}
+.industry-card .ic-icon{width:40px;height:40px;margin-bottom:16px;}
+.industry-card .ic-icon svg{width:40px;height:40px;}
+.industry-card h3{font-size:15px;font-weight:600;margin-bottom:8px;}
+.industry-card h3 a{color:#fff;}
+.industry-card h3 a:hover{color:#2DD4BF;}
+.industry-card p{color:#9CA3AF;font-size:13px;line-height:1.5;}
 footer{text-align:center;padding:48px 80px;color:#6B7280;font-size:14px;border-top:1px solid #1F2937;max-width:1440px;margin:0 auto;}
 @media(max-width:768px){
 nav{padding:16px 24px;}
@@ -74,7 +82,7 @@ section{padding:48px 24px;}
 .powered-inner{grid-template-columns:1fr;}
 .powered-grid{grid-template-columns:1fr 1fr;}
 .twin-section{grid-template-columns:1fr;padding:48px 24px;}
-.community-grid{grid-template-columns:1fr 1fr;}
+.industry-grid{grid-template-columns:1fr 1fr;}
 .comparison{overflow-x:auto;}
 }
 </style>
@@ -94,7 +102,7 @@ section{padding:48px 24px;}
 <section class="hero">
 <h1>We Make the AI Chips That Give<br>Your Product <span class="accent">Eyes and Ears.</span></h1>
 <p class="tagline">Real-time vision and sound. On-device sensory intelligence — no cloud, no latency. Designed in the UK.</p>
-<a href="https://www.kickstarter.com/projects/ohmlab-ltd/neuro-n6" class="cta" target="_blank" style="font-size:18px;padding:18px 36px;">🚀 Get Early Access on Kickstarter</a>
+<a href="https://www.kickstarter.com/projects/ohmlab-ltd/neuro-n6" class="cta" target="_blank" style="font-size:18px;padding:18px 36px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Get Early Access on Kickstarter</a>
 <div class="hero-demo">
 <img id="demoGif" src="images/DemoReelA.gif" alt="Real-time AI demo - object detection running on-device">
 <div class="demo-label" id="demoLabel">Real-time object detection — running on the Neuro N6</div>
@@ -126,11 +134,11 @@ section{padding:48px 24px;}
 </div>
 <div>
 <div class="carousel-container" id="poweredCarousel">
-<img src="images/neuro-n6-board.jpg" alt="Neuro N6 Board" class="active">
-<img src="images/neuro-vision-camera.jpg" alt="Neuro Vision Camera Module">
-<img src="images/neuro-vision-usbc.jpg" alt="Neuro Vision with USB-C">
-<img src="images/neuro-vision-standoffs.jpg" alt="Neuro Vision on standoffs">
-<img src="images/ohm-lab-overview.jpg" alt="OHM Lab board overview">
+<img src="images/DSC_0208-2.jpg" alt="Neuro N6 Board" class="active">
+<img src="images/DSC_0221.jpg" alt="Neuro Vision Camera Module">
+<img src="images/DSC_0234.jpg" alt="Neuro Vision with USB-C">
+<img src="images/DSC_0251.jpg" alt="Neuro Vision on standoffs">
+<img src="images/DSC_0264.jpg" alt="OHM Lab board overview">
 </div>
 <div class="carousel-dots" id="carouselDots">
 <span class="dot active" data-index="0"></span>
@@ -164,28 +172,28 @@ $ ohm run --camera mipi --model/face_estimation
 <h2>Join the Community</h2>
 <p class="subtitle">Connect with developers building at the edge. We're on GitHub and Discord.</p>
 <a href="#" class="community-link">
-<span class="cl-icon">⭐</span>
+<span class="cl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></span>
 <div>
 <h3>GitHub</h3>
 <p>Explore source code, contribute, and file issues.</p>
 </div>
 </a>
 <a href="#" class="community-link">
-<span class="cl-icon">💬</span>
+<span class="cl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
 <div>
 <h3>Discord</h3>
 <p>Chat with other developers and the OHM team in real-time.</p>
 </div>
 </a>
 <a href="https://www.kickstarter.com/projects/ohmlab-ltd/neuro-n6" class="community-link">
-<span class="cl-icon">🚀</span>
+<span class="cl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
 <div>
 <h3>Kickstarter</h3>
 <p>Back the project and get early access.</p>
 </div>
 </a>
 <a href="#" class="community-link">
-<span class="cl-icon">📖</span>
+<span class="cl-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
 <div>
 <h3>Documentation</h3>
 <p>Full API reference, tutorials, and getting started guides.</p>
@@ -215,37 +223,45 @@ $ ohm run --camera mipi --model/face_estimation
 <section>
 <h2>Built for Every Industry</h2>
 <p class="subtitle">Edge AI vision and audio intelligence across sectors — from agriculture to defence.</p>
-<div class="community-grid">
-<div class="community-card">
-<h3><a href="industries/agriculture.html">🌿 Agriculture</a></h3>
+<div class="industry-grid">
+<div class="industry-card">
+<div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c-4.97 0-9-2.69-9-6v-2c0-3.31 4.03-6 9-6s9 2.69 9 6v2c0 3.31-4.03 6-9 6z"/><path d="M12 2v6"/><path d="M8 5l4 3 4-3"/><path d="M6 8c0-2 2-4 6-4s6 2 6 4"/></svg></div>
+<h3><a href="industries/agriculture.html">Agriculture</a></h3>
 <p>Crop monitoring, pest detection, autonomous field robots.</p>
 </div>
-<div class="community-card">
-<h3><a href="industries/automotive.html">🚗 Automotive</a></h3>
+<div class="industry-card">
+<div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="10" width="20" height="8" rx="2"/><path d="M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M5 14h14"/></svg></div>
+<h3><a href="industries/automotive.html">Automotive</a></h3>
 <p>ADAS, driver monitoring, in-cabin intelligence.</p>
 </div>
-<div class="community-card">
-<h3><a href="industries/defence.html">🛡️ Defence</a></h3>
+<div class="industry-card">
+<div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+<h3><a href="industries/defence.html">Defence</a></h3>
 <p>Surveillance, threat detection, autonomous systems.</p>
 </div>
-<div class="community-card">
-<h3><a href="industries/industrial.html">🏭 Industrial</a></h3>
+<div class="industry-card">
+<div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+<h3><a href="industries/industrial.html">Industrial</a></h3>
 <p>Quality inspection, predictive maintenance, safety monitoring.</p>
 </div>
-<div class="community-card">
-<h3><a href="industries/robotics.html">🤖 Robotics</a></h3>
+<div class="industry-card">
+<div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v2h-8V6a4 4 0 0 1 4-4z"/><rect x="4" y="8" width="16" height="12" rx="2"/><circle cx="9" cy="14" r="1.5"/><circle cx="15" cy="14" r="1.5"/><path d="M9 18h6"/></svg></div>
+<h3><a href="industries/robotics.html">Robotics</a></h3>
 <p>Navigation, object manipulation, real-time perception.</p>
 </div>
-<div class="community-card">
-<h3><a href="industries/healthcare.html">❤️ Healthcare</a></h3>
+<div class="industry-card">
+<div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/><path d="M3 12h4l3-6 4 12 3-6h4"/></svg></div>
+<h3><a href="industries/healthcare.html">Healthcare</a></h3>
 <p>Patient monitoring, medical imaging, fall detection.</p>
 </div>
-<div class="community-card">
-<h3><a href="industries/smarthome.html">🏠 Smart Home</a></h3>
+<div class="industry-card">
+<div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+<h3><a href="industries/smarthome.html">Smart Home</a></h3>
 <p>Voice control, presence detection, security cameras.</p>
 </div>
-<div class="community-card">
-<h3><a href="industries/retail.html">🛒 Retail</a></h3>
+<div class="industry-card">
+<div class="ic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+<h3><a href="industries/retail.html">Retail</a></h3>
 <p>Loss prevention, footfall analytics, shelf intelligence.</p>
 </div>
 </div>
