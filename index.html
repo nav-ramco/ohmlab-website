@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OHM Lab - Edge AI. On Device. No Cloud.</title>
-<meta name="description" content="The Neuro N6 - a tiny, powerful dev board built for real-time vision, audio and sensor AI. Powered by the STM32N6. Designed in the UK.">
+<meta name="description" content="We make the AI chips that give your product eyes and ears. On-device vision, audio and sensor AI. Powered by the STM32N6. Designed in the UK.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -15,23 +15,25 @@ nav .logo{font-size:20px;font-weight:700;}
 nav ul{display:flex;list-style:none;gap:32px;}
 nav ul li a{color:#9CA3AF;font-size:14px;transition:color .2s;}
 nav ul li a:hover{color:#fff;}
-.hero{max-width:1440px;margin:0 auto;padding:60px 80px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.hero{max-width:1440px;margin:0 auto;padding:60px 80px 40px;text-align:center;}
 .hero h1{font-size:64px;font-weight:800;line-height:1.05;margin-bottom:24px;}
-.hero p{color:#9CA3AF;font-size:16px;line-height:1.6;margin-bottom:32px;max-width:500px;}
+.hero h1 .accent{color:#2DD4BF;}
+.hero p{color:#9CA3AF;font-size:18px;line-height:1.6;margin-bottom:32px;max-width:700px;margin-left:auto;margin-right:auto;}
 .hero .cta{display:inline-block;background:#2DD4BF;color:#0A0E1A;padding:14px 28px;border-radius:8px;font-weight:600;font-size:15px;transition:background .2s;}
 .hero .cta:hover{background:#14b8a6;}
-.hero-img{width:100%;border-radius:12px;object-fit:contain;max-height:500px;background:#f5f5f5;padding:20px;}
+.hero-demo{max-width:900px;margin:48px auto 0;border-radius:12px;overflow:hidden;background:#111827;position:relative;}
+.hero-demo img{width:100%;display:block;}
+.hero-demo .demo-label{position:absolute;bottom:0;left:0;right:0;padding:12px 20px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:14px;font-weight:500;color:#fff;}
 section{max-width:1440px;margin:0 auto;padding:80px 80px;}
 section h2{font-size:36px;font-weight:700;margin-bottom:12px;}
 section .subtitle{color:#9CA3AF;font-size:16px;margin-bottom:48px;}
 .powered{background:#111827;border-radius:16px;padding:48px;margin:0 80px;max-width:1280px;margin-left:auto;margin-right:auto;}
+.powered-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
 .powered h2{font-size:28px;margin-bottom:32px;}
-.powered-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.powered-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 .powered-card h3{font-size:15px;font-weight:600;margin-bottom:8px;color:#2DD4BF;}
 .powered-card p{color:#9CA3AF;font-size:13px;line-height:1.5;}
-.demo-reel{max-width:800px;margin:0 auto 48px;border-radius:12px;overflow:hidden;background:#111827;position:relative;}
-.demo-reel img{width:100%;display:block;}
-.demo-reel .demo-label{position:absolute;bottom:0;left:0;right:0;padding:12px 20px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:14px;font-weight:500;color:#fff;}
+.powered-img{width:100%;border-radius:12px;object-fit:contain;max-height:350px;background:#f5f5f5;padding:16px;}
 .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 .gallery-card{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#111827;}
 .gallery-card img{width:100%;height:100%;object-fit:cover;}
@@ -53,10 +55,11 @@ footer{text-align:center;padding:48px 80px;color:#6B7280;font-size:14px;border-t
 @media(max-width:768px){
  nav{padding:16px 24px;}
  nav ul{gap:16px;}
- .hero{grid-template-columns:1fr;padding:40px 24px;}
- .hero h1{font-size:40px;}
+ .hero{padding:40px 24px 24px;}
+ .hero h1{font-size:36px;}
  section{padding:48px 24px;}
  .powered{margin:0 24px;padding:32px;}
+ .powered-inner{grid-template-columns:1fr;}
  .powered-grid{grid-template-columns:1fr 1fr;}
  .gallery-grid{grid-template-columns:1fr;}
  .community-grid{grid-template-columns:1fr 1fr;}
@@ -77,15 +80,18 @@ footer{text-align:center;padding:48px 80px;color:#6B7280;font-size:14px;border-t
  </ul>
 </nav>
 <section class="hero">
- <div>
- <h1>Edge AI.<br>On Device.<br>No Cloud.</h1>
- <p>The Neuro N6 — a tiny, powerful dev board built for real-time vision, audio and sensor AI. Powered by the STM32N6. Designed in the UK.</p>
+ <h1>We Give Your Product<br><span class="accent">Eyes and Ears.</span></h1>
+ <p>OHM Lab makes the AI chips that bring real-time vision and sound to your devices. No cloud. No latency. Just on-device sensory intelligence, designed in the UK.</p>
  <a href="#" class="cta">Back on Kickstarter →</a>
+ <div class="hero-demo">
+ <img id="demoGif" src="images/DemoReelA.gif" alt="Real-time AI demo - object detection running on-device">
+ <div class="demo-label" id="demoLabel">Real-time object detection — running on the Neuro N6</div>
  </div>
- <img src="images/DSC_0208-2.jpg" alt="Neuro N6 and Neuro Vision boards" class="hero-img">
 </section>
 <div class="powered">
  <h2>Powered by the STM32N6</h2>
+ <div class="powered-inner">
+ <div>
  <div class="powered-grid">
  <div class="powered-card">
  <h3>Dedicated NPU</h3>
@@ -104,14 +110,13 @@ footer{text-align:center;padding:48px 80px;color:#6B7280;font-size:14px;border-t
  <p>Arduino Compatible. Works with STM32CubeAI.</p>
  </div>
  </div>
+ </div>
+ <img src="images/DSC_0208-2.jpg" alt="Neuro N6 and Neuro Vision boards" class="powered-img">
+ </div>
 </div>
 <section id="gallery">
  <h2>See It In Action</h2>
  <p class="subtitle">Real-time AI demos running on the Neuro N6. No cloud. No GPU. Just edge intelligence.</p>
- <div class="demo-reel">
- <img id="demoGif" src="images/DemoReelA.gif" alt="Demo Reel">
- <div class="demo-label" id="demoLabel">Demo Reel A</div>
- </div>
  <div class="gallery-grid">
  <div class="gallery-card">
  <img src="images/DSC_0264.jpg" alt="Neuro N6 Board">
@@ -190,13 +195,11 @@ footer{text-align:center;padding:48px 80px;color:#6B7280;font-size:14px;border-t
 <script>
 (function(){
  const gifs = ['images/DemoReelA.gif','images/DemoReelB.gif'];
- const labels = ['Demo Reel A','Demo Reel B'];
+ const labels = ['Real-time object detection \u2014 running on the Neuro N6','Face detection & tracking \u2014 running on the Neuro N6'];
  const img = document.getElementById('demoGif');
  const label = document.getElementById('demoLabel');
  let current = 0;
- // Preload both GIFs
  gifs.forEach(src => { const i = new Image(); i.src = src; });
- // Switch every 8 seconds
  setInterval(function(){
  current = (current + 1) % gifs.length;
  img.src = gifs[current];
