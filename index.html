@@ -10,39 +10,35 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Inter',sans-serif;background:#0A0E1A;color:#fff;}
 a{color:#2DD4BF;text-decoration:none;}
-
 nav{display:flex;align-items:center;justify-content:space-between;padding:20px 80px;max-width:1440px;margin:0 auto;}
 nav .logo{font-size:20px;font-weight:700;}
 nav ul{display:flex;list-style:none;gap:32px;}
 nav ul li a{color:#9CA3AF;font-size:14px;transition:color .2s;}
 nav ul li a:hover{color:#fff;}
-
 .hero{max-width:1440px;margin:0 auto;padding:60px 80px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
 .hero h1{font-size:64px;font-weight:800;line-height:1.05;margin-bottom:24px;}
 .hero p{color:#9CA3AF;font-size:16px;line-height:1.6;margin-bottom:32px;max-width:500px;}
 .hero .cta{display:inline-block;background:#2DD4BF;color:#0A0E1A;padding:14px 28px;border-radius:8px;font-weight:600;font-size:15px;transition:background .2s;}
 .hero .cta:hover{background:#14b8a6;}
 .hero-img{width:100%;border-radius:12px;object-fit:contain;max-height:500px;background:#f5f5f5;padding:20px;}
-
 section{max-width:1440px;margin:0 auto;padding:80px 80px;}
 section h2{font-size:36px;font-weight:700;margin-bottom:12px;}
 section .subtitle{color:#9CA3AF;font-size:16px;margin-bottom:48px;}
-
 .powered{background:#111827;border-radius:16px;padding:48px;margin:0 80px;max-width:1280px;margin-left:auto;margin-right:auto;}
 .powered h2{font-size:28px;margin-bottom:32px;}
 .powered-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
 .powered-card h3{font-size:15px;font-weight:600;margin-bottom:8px;color:#2DD4BF;}
 .powered-card p{color:#9CA3AF;font-size:13px;line-height:1.5;}
-
+.demo-reel{max-width:800px;margin:0 auto 48px;border-radius:12px;overflow:hidden;background:#111827;position:relative;}
+.demo-reel img{width:100%;display:block;}
+.demo-reel .demo-label{position:absolute;bottom:0;left:0;right:0;padding:12px 20px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:14px;font-weight:500;color:#fff;}
 .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
 .gallery-card{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/10;background:#111827;}
 .gallery-card img{width:100%;height:100%;object-fit:cover;}
 .gallery-card .label{position:absolute;bottom:0;left:0;right:0;padding:16px 20px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:14px;font-weight:500;}
-
 .code-section{background:#111827;border-radius:16px;padding:40px;margin-top:48px;max-width:800px;}
 .code-section code{font-family:'SF Mono',monospace;font-size:13px;color:#2DD4BF;line-height:2;}
 .code-section .comment{color:#6B7280;}
-
 .comparison table{width:100%;border-collapse:collapse;margin-top:32px;}
 .comparison th,.comparison td{padding:14px 20px;text-align:left;font-size:14px;border-bottom:1px solid #1F2937;}
 .comparison th{color:#9CA3AF;font-weight:500;}
@@ -50,154 +46,163 @@ section .subtitle{color:#9CA3AF;font-size:16px;margin-bottom:48px;}
 .comparison td:first-child{color:#9CA3AF;}
 .yes{color:#2DD4BF;}
 .no{color:#EF4444;}
-
 .community-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
 .community-card h3{font-size:16px;font-weight:600;margin-bottom:8px;}
 .community-card p{color:#9CA3AF;font-size:13px;line-height:1.5;}
-
 footer{text-align:center;padding:48px 80px;color:#6B7280;font-size:14px;border-top:1px solid #1F2937;max-width:1440px;margin:0 auto;}
-
 @media(max-width:768px){
-  nav{padding:16px 24px;}
-  nav ul{gap:16px;}
-  .hero{grid-template-columns:1fr;padding:40px 24px;}
-  .hero h1{font-size:40px;}
-  section{padding:48px 24px;}
-  .powered{margin:0 24px;padding:32px;}
-  .powered-grid{grid-template-columns:1fr 1fr;}
-  .gallery-grid{grid-template-columns:1fr;}
-  .community-grid{grid-template-columns:1fr 1fr;}
-  .comparison{overflow-x:auto;}
+ nav{padding:16px 24px;}
+ nav ul{gap:16px;}
+ .hero{grid-template-columns:1fr;padding:40px 24px;}
+ .hero h1{font-size:40px;}
+ section{padding:48px 24px;}
+ .powered{margin:0 24px;padding:32px;}
+ .powered-grid{grid-template-columns:1fr 1fr;}
+ .gallery-grid{grid-template-columns:1fr;}
+ .community-grid{grid-template-columns:1fr 1fr;}
+ .comparison{overflow-x:auto;}
 }
 </style>
 </head>
 <body>
-
 <nav>
-  <div class="logo">ohm lab</div>
-  <ul>
-    <li><a href="#">Products</a></li>
-    <li><a href="#">Docs</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#community">Community</a></li>
-    <li><a href="#">GitHub</a></li>
-  </ul>
+ <div class="logo">ohm lab</div>
+ <ul>
+ <li><a href="#">Products</a></li>
+ <li><a href="#">Docs</a></li>
+ <li><a href="#gallery">Gallery</a></li>
+ <li><a href="#">Blog</a></li>
+ <li><a href="#community">Community</a></li>
+ <li><a href="#">GitHub</a></li>
+ </ul>
 </nav>
-
 <section class="hero">
-  <div>
-    <h1>Edge AI.<br>On Device.<br>No Cloud.</h1>
-    <p>The Neuro N6 — a tiny, powerful dev board built for real-time vision, audio and sensor AI. Powered by the STM32N6. Designed in the UK.</p>
-    <a href="#" class="cta">Back on Kickstarter →</a>
-  </div>
-  <img src="images/DSC_0208-2.jpg" alt="Neuro N6 and Neuro Vision boards" class="hero-img">
+ <div>
+ <h1>Edge AI.<br>On Device.<br>No Cloud.</h1>
+ <p>The Neuro N6 — a tiny, powerful dev board built for real-time vision, audio and sensor AI. Powered by the STM32N6. Designed in the UK.</p>
+ <a href="#" class="cta">Back on Kickstarter →</a>
+ </div>
+ <img src="images/DSC_0208-2.jpg" alt="Neuro N6 and Neuro Vision boards" class="hero-img">
 </section>
-
 <div class="powered">
-  <h2>Powered by the STM32N6</h2>
-  <div class="powered-grid">
-    <div class="powered-card">
-      <h3>Dedicated NPU</h3>
-      <p>1.5 TOPS neural processing unit. Run complex models on a tiny board.</p>
-    </div>
-    <div class="powered-card">
-      <h3>On-device Processing</h3>
-      <p>No cloud. No latency. Complete data privacy.</p>
-    </div>
-    <div class="powered-card">
-      <h3>Camera-Ready</h3>
-      <p>MIPI CSI connector for plug-and-play vision.</p>
-    </div>
-    <div class="powered-card">
-      <h3>Ecosystem Ready</h3>
-      <p>Arduino Compatible. Works with STM32CubeAI.</p>
-    </div>
-  </div>
+ <h2>Powered by the STM32N6</h2>
+ <div class="powered-grid">
+ <div class="powered-card">
+ <h3>Dedicated NPU</h3>
+ <p>1.5 TOPS neural processing unit. Run complex models on a tiny board.</p>
+ </div>
+ <div class="powered-card">
+ <h3>On-device Processing</h3>
+ <p>No cloud. No latency. Complete data privacy.</p>
+ </div>
+ <div class="powered-card">
+ <h3>Camera-Ready</h3>
+ <p>MIPI CSI connector for plug-and-play vision.</p>
+ </div>
+ <div class="powered-card">
+ <h3>Ecosystem Ready</h3>
+ <p>Arduino Compatible. Works with STM32CubeAI.</p>
+ </div>
+ </div>
 </div>
-
 <section id="gallery">
-  <h2>See It In Action</h2>
-  <p class="subtitle">Real-time AI demos running on the Neuro N6. No cloud. No GPU. Just edge intelligence.</p>
-  <div class="gallery-grid">
-    <div class="gallery-card">
-      <img src="images/DSC_0264.jpg" alt="Neuro N6 Board">
-      <div class="label">Neuro N6 — STM32N6 Dev Board</div>
-    </div>
-    <div class="gallery-card">
-      <img src="images/DSC_0251.jpg" alt="Neuro Vision Camera Module">
-      <div class="label">Neuro Vision — Camera Module</div>
-    </div>
-    <div class="gallery-card">
-      <img src="images/DSC_0234.jpg" alt="Neuro Vision with USB-C">
-      <div class="label">Neuro Vision — Connected</div>
-    </div>
-    <div class="gallery-card">
-      <img src="images/DSC_0221.jpg" alt="Neuro Vision on standoffs">
-      <div class="label">Neuro Vision — Ready to Deploy</div>
-    </div>
-  </div>
+ <h2>See It In Action</h2>
+ <p class="subtitle">Real-time AI demos running on the Neuro N6. No cloud. No GPU. Just edge intelligence.</p>
+ <div class="demo-reel">
+ <img id="demoGif" src="images/DemoReelA.gif" alt="Demo Reel">
+ <div class="demo-label" id="demoLabel">Demo Reel A</div>
+ </div>
+ <div class="gallery-grid">
+ <div class="gallery-card">
+ <img src="images/DSC_0264.jpg" alt="Neuro N6 Board">
+ <div class="label">Neuro N6 — STM32N6 Dev Board</div>
+ </div>
+ <div class="gallery-card">
+ <img src="images/DSC_0251.jpg" alt="Neuro Vision Camera Module">
+ <div class="label">Neuro Vision — Camera Module</div>
+ </div>
+ <div class="gallery-card">
+ <img src="images/DSC_0234.jpg" alt="Neuro Vision with USB-C">
+ <div class="label">Neuro Vision — Connected</div>
+ </div>
+ <div class="gallery-card">
+ <img src="images/DSC_0221.jpg" alt="Neuro Vision on standoffs">
+ <div class="label">Neuro Vision — Ready to Deploy</div>
+ </div>
+ </div>
 </section>
-
 <section>
-  <h2>Get Started in Minutes</h2>
-  <div class="code-section">
-    <code>
-      <span class="comment"># Install the SDK</span><br>
-      $ pip install ohm-lab-sdk<br><br>
-      <span class="comment"># Initialise your board</span><br>
-      $ ohm init --board neuro-n6<br><br>
-      <span class="comment"># Deploy a model</span><br>
-      $ ohm deploy model/lite --target n6<br><br>
-      <span class="comment"># Run real-time inference</span><br>
-      $ ohm run --camera mipi --model/face_estimation
-    </code>
-  </div>
+ <h2>Get Started in Minutes</h2>
+ <div class="code-section">
+ <code>
+ <span class="comment"># Install the SDK</span><br>
+ $ pip install ohm-lab-sdk<br><br>
+ <span class="comment"># Initialise your board</span><br>
+ $ ohm init --board neuro-n6<br><br>
+ <span class="comment"># Deploy a model</span><br>
+ $ ohm deploy model/lite --target n6<br><br>
+ <span class="comment"># Run real-time inference</span><br>
+ $ ohm run --camera mipi --model/face_estimation
+ </code>
+ </div>
 </section>
-
 <section class="comparison">
-  <h2>Why Neuro N6?</h2>
-  <table>
-    <thead>
-      <tr><th>Feature</th><th>Neuro N6</th><th>Arduino Nicla Vision</th><th>Raspberry Pi 5</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Dedicated NPU</td><td class="yes">Yes (1.5 TOPS)</td><td class="no">No</td><td class="no">No</td></tr>
-      <tr><td>On-device Vision</td><td class="yes">Yes (MIPI CSI)</td><td class="yes">Yes (Built-in)</td><td class="yes">Yes (CSI)</td></tr>
-      <tr><td>Power Consumption</td><td class="yes">Ultra-low</td><td>Low</td><td class="no">High</td></tr>
-      <tr><td>Price Point</td><td class="yes">Competitive</td><td>Premium</td><td>Budget</td></tr>
-      <tr><td>Fast Build Time</td><td class="yes">Yes</td><td>Moderate</td><td class="no">Full Linux OS</td></tr>
-      <tr><td>Arduino Compatible</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td></tr>
-    </tbody>
-  </table>
+ <h2>Why Neuro N6?</h2>
+ <table>
+ <thead>
+ <tr><th>Feature</th><th>Neuro N6</th><th>Arduino Nicla Vision</th><th>Raspberry Pi 5</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>Dedicated NPU</td><td class="yes">Yes (1.5 TOPS)</td><td class="no">No</td><td class="no">No</td></tr>
+ <tr><td>On-device Vision</td><td class="yes">Yes (MIPI CSI)</td><td class="yes">Yes (Built-in)</td><td class="yes">Yes (CSI)</td></tr>
+ <tr><td>Power Consumption</td><td class="yes">Ultra-low</td><td>Low</td><td class="no">High</td></tr>
+ <tr><td>Price Point</td><td class="yes">Competitive</td><td>Premium</td><td>Budget</td></tr>
+ <tr><td>Fast Build Time</td><td class="yes">Yes</td><td>Moderate</td><td class="no">Full Linux OS</td></tr>
+ <tr><td>Arduino Compatible</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td></tr>
+ </tbody>
+ </table>
 </section>
-
 <section id="community">
-  <h2>Join the Community</h2>
-  <p class="subtitle">Connect with developers building at the edge.</p>
-  <div class="community-grid">
-    <div class="community-card">
-      <h3><a href="#">GitHub</a></h3>
-      <p>Explore source, contribute, and file issues.</p>
-    </div>
-    <div class="community-card">
-      <h3><a href="#">Discord</a></h3>
-      <p>Chat with other developers and the OHM team.</p>
-    </div>
-    <div class="community-card">
-      <h3><a href="#">Kickstarter</a></h3>
-      <p>Back the project and get early access.</p>
-    </div>
-    <div class="community-card">
-      <h3><a href="#">Documentation</a></h3>
-      <p>Full API reference, tutorials, and getting started guides.</p>
-    </div>
-  </div>
+ <h2>Join the Community</h2>
+ <p class="subtitle">Connect with developers building at the edge.</p>
+ <div class="community-grid">
+ <div class="community-card">
+ <h3><a href="#">GitHub</a></h3>
+ <p>Explore source, contribute, and file issues.</p>
+ </div>
+ <div class="community-card">
+ <h3><a href="#">Discord</a></h3>
+ <p>Chat with other developers and the OHM team.</p>
+ </div>
+ <div class="community-card">
+ <h3><a href="#">Kickstarter</a></h3>
+ <p>Back the project and get early access.</p>
+ </div>
+ <div class="community-card">
+ <h3><a href="#">Documentation</a></h3>
+ <p>Full API reference, tutorials, and getting started guides.</p>
+ </div>
+ </div>
 </section>
-
 <footer>
-  © 2025 OHM Lab. Built in the UK. Designed for developers who build at the edge.
+ © 2025 OHM Lab. Built in the UK. Designed for developers who build at the edge.
 </footer>
-
+<script>
+(function(){
+ const gifs = ['images/DemoReelA.gif','images/DemoReelB.gif'];
+ const labels = ['Demo Reel A','Demo Reel B'];
+ const img = document.getElementById('demoGif');
+ const label = document.getElementById('demoLabel');
+ let current = 0;
+ // Preload both GIFs
+ gifs.forEach(src => { const i = new Image(); i.src = src; });
+ // Switch every 8 seconds
+ setInterval(function(){
+ current = (current + 1) % gifs.length;
+ img.src = gifs[current];
+ label.textContent = labels[current];
+ }, 8000);
+})();
+</script>
 </body>
 </html>
